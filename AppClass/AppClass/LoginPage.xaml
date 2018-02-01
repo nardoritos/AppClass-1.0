@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:helpers="clr-namespace:AppClass.Helpers"
+             xmlns:entry="clr-namespace:AppClass.Helpers"
+             x:Class="AppClass.LoginPage">
+    <AbsoluteLayout>
+        <Image 
+            x:Name="loginImage"  
+            Aspect="AspectFill"
+			AbsoluteLayout.LayoutBounds="0, 0, 1, 1" 
+            AbsoluteLayout.LayoutFlags="All" />
+        <BoxView 
+            Opacity="0.7" 
+            BackgroundColor="Black"
+            AbsoluteLayout.LayoutBounds="0,0,1,100" 
+            AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"/>
+        <StackLayout 
+            Orientation="Horizontal" 
+            HorizontalOptions="Center" 
+            AbsoluteLayout.LayoutFlags="WidthProportional" 
+            AbsoluteLayout.LayoutBounds="0,30,1,50">
+            <Image 
+                Source="https://cdn3.iconfinder.com/data/icons/brain-games/1042/Puzzle.png" 
+                HorizontalOptions="Center" 
+                VerticalOptions="Center"/>
+            <Label 
+                Text="AppClass" 
+                FontSize="30" 
+                HorizontalOptions="Center" 
+                VerticalOptions="Center" 
+                TextColor="#cfcfc4">
+                <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Lobster 1.4.otf" />
+                        <On Platform="Android" Value="Lobster 1.4.otf#Lobster 1.4" />
+                    </OnPlatform>
+                </Label.FontFamily>
+            </Label>
+        </StackLayout>
+        <BoxView 
+            Opacity="0.5" 
+            Color="Black"
+            AbsoluteLayout.LayoutBounds="0,1,1,100" 
+            AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"/>
+        <StackLayout 
+            Orientation="Horizontal" 
+            Padding="30,0"
+            AbsoluteLayout.LayoutBounds="0,1,1,100" 
+            AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional">
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer
+                        Tapped="Login"
+                        NumberOfTapsRequired="1"/>
+            </StackLayout.GestureRecognizers>
+            <Label 
+                FontSize="25" 
+                HorizontalOptions="CenterAndExpand" 
+                VerticalOptions="Center" 
+                TextColor="White" 
+                Text="Login">
+                <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="ERASLGHT.TTF" />
+                        <On Platform="Android" Value="Eras Light.ttf#Eras Light" />
+                    </OnPlatform>
+                </Label.FontFamily>
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="Login"
+                        NumberOfTapsRequired="1"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+        <Frame  
+            HorizontalOptions="Center" 
+            VerticalOptions="CenterAndExpand" 
+            x:Name="frame2"
+            CornerRadius="30"
+            HasShadow="true"
+            IsEnabled="False"
+            Opacity="0  "
+            OutlineColor="Yellow"
+            AbsoluteLayout.LayoutBounds="0.5,0.5,0.7,0.9" 
+            AbsoluteLayout.LayoutFlags="All">
+            <StackLayout>
+                <Label 
+                    Text="Login" 
+                    FontSize="25" 
+                    HorizontalOptions="CenterAndExpand" 
+                    VerticalOptions="CenterAndExpand" 
+                    TextColor="Black">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="ERASLGHT.TTF" />
+                            <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+                <Entry 
+                    Placeholder="(DDD)00000-0000" 
+                    Keyboard="Telephone" 
+                    x:Name="fone">
+                    <Entry.Behaviors>
+                        <entry:MaskBehaviorEntry 
+                            MaxLength="15" 
+                            Tipo="Telefone" />
+                    </Entry.Behaviors>
+                    <Entry.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="ERASLGHT.TTF" />
+                            <On Platform="Android" Value="Lato-Italic.ttf#Lato-Italic" />
+                        </OnPlatform>
+                    </Entry.FontFamily>
+                </Entry>
+                <Entry 
+                    Placeholder="RM do Aluno" 
+                    Keyboard="Numeric" 
+                    x:Name="rm">
+                    <Entry.Behaviors>
+                        <entry:MaskBehaviorEntry 
+                            MaxLength="5"/>
+                    </Entry.Behaviors>
+                    <Entry.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="ERASLGHT.TTF" />
+                            <On Platform="Android" Value="Lato-Italic.ttf#Lato-Italic" />
+                        </OnPlatform>
+                    </Entry.FontFamily>
+                </Entry>
+                <Entry 
+                    Placeholder="Data de Nascimento do Aluno" 
+                    Keyboard="Numeric" 
+                    x:Name="data">
+                    <Entry.Behaviors>
+                        <entry:MaskBehaviorEntry 
+                            MaxLength="10" 
+                            Tipo="Data" />
+                    </Entry.Behaviors>
+                    <Entry.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="ERASLGHT.TTF" />
+                            <On Platform="Android" Value="Lato-Italic.ttf#Lato-Italic" />
+                        </OnPlatform>
+                    </Entry.FontFamily>
+                </Entry>
+                <Button 
+                    Text="Entrar" 
+                    BackgroundColor="#b3dfe3ee" 
+                    FontSize="20" 
+                    Clicked="Carregar">
+                    <Button.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="ErasRegular.ttf" />
+                            <On Platform="Android" Value="Lato-Italic.ttf#Lato-Italic" />
+                        </OnPlatform>
+                    </Button.FontFamily>
+                </Button>
+            </StackLayout>
+        </Frame>
+
+        <Frame  
+            HorizontalOptions="Center" 
+            VerticalOptions="CenterAndExpand" 
+            x:Name="frame1"
+            CornerRadius="30"
+            HasShadow="true"
+            OutlineColor="Yellow"
+            AbsoluteLayout.LayoutBounds="0.5,0.5,0.7,0.9" 
+            AbsoluteLayout.LayoutFlags="All">
+            <StackLayout>
+                <Label 
+                    Text="Lorem ipsum dolor sit amet" 
+                    FontSize="25" 
+                    HorizontalOptions="CenterAndExpand" 
+                    VerticalOptions="CenterAndExpand" 
+                    TextColor="Black" 
+                    HorizontalTextAlignment="Center">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Lobster 1.4.otf" />
+                            <On Platform="Android" Value="Lobster 1.4.otf#Lobster 1.4" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+            </StackLayout>
+        </Frame>
+        
+    </AbsoluteLayout>
+</ContentPage>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<bottom:BottomTabbedPage 
+    NavigationPage.HasNavigationBar="False"
+    Icon="mensagens.png"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:bottom="clr-namespace:Naxam.Controls.Forms;assembly=Naxam.BottomTabbedPage.Forms"
+    xmlns:local="clr-namespace:AppClass"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:badge="clr-namespace:BadgeView.Shared;assembly=BadgeView.Shared"
+    x:Class="AppClass.PageTabs">
+
+    <!-- Mensagens -->
+    
+    <NavigationPage 
+        Title="Mensagens" 
+        Icon="mensagens.png">
+        <x:Arguments>
+            <local:Mensagens 
+                Title="Mensagens"/>
+        </x:Arguments>
+    </NavigationPage>
+    
+    <!-- Financeiro -->
+    
+    <NavigationPage 
+        Title="Financeiro" 
+        Icon="financeiro.png">
+        <x:Arguments>
+            <local:Financeiro 
+                Title="Financeiro"/>
+        </x:Arguments>
+    </NavigationPage>
+    
+    <!-- Teste -->
+    
+    <NavigationPage 
+        Title="Teste" 
+        Icon="cod1.png">
+        <x:Arguments>
+            <local:PageTeste 
+                Title="Teste"/>
+        </x:Arguments>
+    </NavigationPage>
+    
+</bottom:BottomTabbedPage>

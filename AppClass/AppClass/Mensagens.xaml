@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage BackgroundColor="#ffdfe3ee"
+             NavigationPage.HasNavigationBar="False"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AppClass"
+             x:Class="AppClass.Mensagens">
+    <Grid 
+        VerticalOptions="FillAndExpand" 
+        HorizontalOptions="FillAndExpand" 
+        ColumnSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="56"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackLayout 
+            Padding="10" 
+            BackgroundColor="#85888e" 
+            Orientation="Horizontal" 
+            Grid.Row="0" 
+            Grid.Column="0" 
+            HorizontalOptions="Fill" 
+            VerticalOptions="Fill"/>
+        <Image 
+            x:Name="img"
+            WidthRequest="80"
+            HeightRequest="60"
+            Aspect="AspectFit"
+            VerticalOptions="Center"
+            Grid.Row="0" 
+            Grid.Column="0"
+            AbsoluteLayout.LayoutBounds="0.5,30,1,50"
+            AbsoluteLayout.LayoutFlags="WidthProportional"/>
+        <StackLayout  
+            Grid.Row="1" 
+            Grid.Column="0">
+            <SearchBar  
+                Placeholder="Procurar..." 
+                HeightRequest="40"
+        		TextChanged="OnSearchTextChanged"
+                FontSize="20">
+                <SearchBar.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="ERASLGHT.TTF"/>
+                        <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+                    </OnPlatform>
+                </SearchBar.FontFamily>
+            </SearchBar>
+            <ListView   
+                x:Name="listView"
+			    IsPullToRefreshEnabled="true"
+			    Refreshing="OnRefreshing"
+                ItemSelected="Selected"
+                HasUnevenRows="true">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <local:ExtendedViewCell 
+                            SelectedBackgroundColor="#ffb6c5ef">
+                            <StackLayout 
+                                Padding="10" 
+                                Orientation="Horizontal">
+                                <Image 
+                                    x:Name="image" 
+                                    Source="{Binding IconSource}" 
+                                    HeightRequest="25" 
+                                    WidthRequest="25" />
+                                <StackLayout 
+                                    Padding="10,0,0,0" 
+                                    HorizontalOptions="StartAndExpand" 
+                                    VerticalOptions="Center">
+                                    <Label 
+                                        Text="{Binding nomemsg}" 
+                                        FontSize="20" 
+                                        TextColor="Black">
+                                        <Label.FontFamily>
+                                            <OnPlatform x:TypeArguments="x:String">
+                                                <On Platform="iOS" Value="ERASLGHT.TTF" />
+                                                <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular" />
+                                            </OnPlatform>
+                                        </Label.FontFamily>
+                                    </Label>
+                                    <Label 
+                                        Text="{Binding datamsg}" 
+                                        FontSize="16" 
+                                        TextColor="Black">
+                                        <Label.FontFamily>
+                                            <OnPlatform x:TypeArguments="x:String">
+                                                <On Platform="iOS" Value="ERASLGHT.TTF" />
+                                                <On Platform="Android" Value="Lato-Italic.ttf#Lato-Italic" />
+                                            </OnPlatform>
+                                        </Label.FontFamily>
+                                    </Label>
+                                </StackLayout>
+                                <Image 
+                                    Source="{Binding CheckSource}" 
+                                    HeightRequest="25"/>
+                            </StackLayout>
+                        </local:ExtendedViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>       
+
+        </StackLayout>
+    </Grid>
+
+</ContentPage>

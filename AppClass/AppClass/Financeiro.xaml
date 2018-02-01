@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage BackgroundColor="#ffdfe3ee"
+             NavigationPage.HasNavigationBar="False"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:badge="clr-namespace:BadgeView.Shared;assembly=BadgeView.Shared"
+             x:Class="AppClass.Financeiro"
+             xmlns:circle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions">
+    <Grid 
+        VerticalOptions="FillAndExpand" 
+        HorizontalOptions="FillAndExpand" 
+        ColumnSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="56"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackLayout 
+            Padding="10" 
+            BackgroundColor="Red" 
+            Orientation="Horizontal" 
+            Grid.Row="0" 
+            Grid.Column="0" 
+            HorizontalOptions="Fill" 
+            VerticalOptions="Fill"/>
+        <Image 
+            x:Name="img"
+            WidthRequest="80"
+            HeightRequest="60"
+            Aspect="AspectFit"
+            VerticalOptions="Center"
+            Grid.Row="0" 
+            Grid.Column="0"
+            AbsoluteLayout.LayoutBounds="0.5,30,1,50"
+            AbsoluteLayout.LayoutFlags="WidthProportional"/>
+        <AbsoluteLayout Grid.Row="1" Grid.Column="0">
+            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                <SearchBar  Placeholder="Procurar..." 
+                            HeightRequest="40"
+                    FontSize="20">
+                    <SearchBar.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="ERASLGHT.TTF"/>
+                            <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular"/>
+                        </OnPlatform>
+                    </SearchBar.FontFamily>
+                </SearchBar>
+                <ListView   x:Name="listView"
+			        IsPullToRefreshEnabled="true"
+                    Refreshing="OnRefreshing"
+                    ItemTapped="Copiar"
+                    HasUnevenRows="true"
+                    AbsoluteLayout.LayoutBounds="0,46,1,1"
+                    AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="5" Orientation="Horizontal">
+
+                                    <BoxView x:Name ="boxView" Color="{Binding color}" WidthRequest="5" VerticalOptions="Fill"/>
+
+                                    <StackLayout Padding="5,0,0,0" >
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="2*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+
+
+                                            <Label Text="Referência: " FontSize="16" TextColor="Black" Grid.Row="0" Grid.Column="0">
+                                                <Label.FontFamily>
+                                                    <OnPlatform x:TypeArguments="x:String">
+                                                        <On Platform="iOS" Value="ERASLGHT.TTF" />
+                                                        <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular" />
+                                                    </OnPlatform>
+                                                </Label.FontFamily>
+                                            </Label>
+                                            <Label Text="{Binding DescrPendencia}" 
+                                       FontSize="16" TextColor="{Binding color}"  Grid.Row="0" Grid.Column="1">
+                                                <Label.FontFamily>
+                                                    <OnPlatform x:TypeArguments="x:String">
+                                                        <On Platform="iOS" Value="ERASLGHT.TTF" />
+                                                        <On Platform="Android" Value="Lato-Italic.ttf#Lato-Italic" />
+                                                    </OnPlatform>
+                                                </Label.FontFamily>
+                                            </Label>
+
+                                            <Label Text="Vencimento: "  TextColor="Black"
+                                       FontSize="16" Grid.Row="1" Grid.Column="0">
+                                                <Label.FontFamily>
+                                                    <OnPlatform x:TypeArguments="x:String">
+                                                        <On Platform="iOS" Value="ERASLGHT.TTF" />
+                                                        <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular" />
+                                                    </OnPlatform>
+                                                </Label.FontFamily>
+                                            </Label>
+                                            <Label Text="{Binding DataVencimento}" 
+                                       FontSize="16" TextColor="{Binding color}" Grid.Row="1" Grid.Column="1">
+                                                <Label.FontFamily>
+                                                    <OnPlatform x:TypeArguments="x:String">
+                                                        <On Platform="iOS" Value="ERASLGHT.TTF" />
+                                                        <On Platform="Android" Value="Lato-Italic.ttf#Lato-Italic" />
+                                                    </OnPlatform>
+                                                </Label.FontFamily>
+                                            </Label>
+
+                                            <Label Text="Valor: " TextColor="Black"
+                                       FontSize="16" Grid.Row="2" Grid.Column="0">
+                                                <Label.FontFamily>
+                                                    <OnPlatform x:TypeArguments="x:String">
+                                                        <On Platform="iOS" Value="ERASLGHT.TTF" />
+                                                        <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular" />
+                                                    </OnPlatform>
+                                                </Label.FontFamily>
+                                            </Label>
+                                            <Label Text="{Binding Valor, StringFormat='R${0}'}" 
+                                       FontSize="16" TextColor="{Binding color}" Grid.Row="2" Grid.Column="1">
+                                                <Label.FontFamily>
+                                                    <OnPlatform x:TypeArguments="x:String">
+                                                        <On Platform="iOS" Value="ERASLGHT.TTF" />
+                                                        <On Platform="Android" Value="Lato-Italic.ttf#Lato-Italic" />
+                                                    </OnPlatform>
+                                                </Label.FontFamily>
+                                            </Label>
+
+                                            <Label Text="Pagamento: " TextColor="Black"
+                                       FontSize="16" Grid.Row="3" Grid.Column="0">
+                                                <Label.FontFamily>
+                                                    <OnPlatform x:TypeArguments="x:String">
+                                                        <On Platform="iOS" Value="ERASLGHT.TTF" />
+                                                        <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular" />
+                                                    </OnPlatform>
+                                                </Label.FontFamily>
+                                            </Label>
+                                            <Label Text="{Binding DataPagamento}" 
+                                       FontSize="16" TextColor="{Binding color}" Grid.Row="3" Grid.Column="1">
+                                                <Label.FontFamily>
+                                                    <OnPlatform x:TypeArguments="x:String">
+                                                        <On Platform="iOS" Value="ERASLGHT.TTF" />
+                                                        <On Platform="Android" Value="Lato-Italic.ttf#Lato-Italic" />
+                                                    </OnPlatform>
+                                                </Label.FontFamily>
+                                            </Label>
+                                            <Label Text="{Binding LinhaDigitavel}" IsVisible="False"/>
+                                        </Grid>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <badge:BadgeView AbsoluteLayout.LayoutBounds="1,1,70,70" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" WidthRequest="70" HeightRequest="70" BadgeColor="Red">
+                <Image Source="https://julianocustodiosite.files.wordpress.com/2017/02/cropped-logojuliano.png?w=400"/>
+            </badge:BadgeView>
+        </AbsoluteLayout>
+    </Grid>
+</ContentPage>
