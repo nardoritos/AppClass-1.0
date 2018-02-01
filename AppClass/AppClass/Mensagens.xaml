@@ -37,7 +37,7 @@
             <SearchBar  
                 Placeholder="Procurar..." 
                 HeightRequest="40"
-        		TextChanged="OnSearchTextChanged"
+        	TextChanged="OnSearchTextChanged"
                 FontSize="20">
                 <SearchBar.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
@@ -48,8 +48,8 @@
             </SearchBar>
             <ListView   
                 x:Name="listView"
-			    IsPullToRefreshEnabled="true"
-			    Refreshing="OnRefreshing"
+		IsPullToRefreshEnabled="true"
+		Refreshing="OnRefreshing"
                 ItemSelected="Selected"
                 HasUnevenRows="true">
                 <ListView.ItemTemplate>
