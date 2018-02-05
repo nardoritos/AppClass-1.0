@@ -7,35 +7,39 @@
     xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
     x:Class="AppClass.ContatosEscola">
     <MasterDetailPage.Master>
-        <ContentPage 
-            Title="Fon" 
-            BackgroundColor="#ffdfe3ee" 
-            Icon="cod1.png">
-            <StackLayout>
-                <StackLayout 
-                    Orientation="Horizontal" 
-                    Padding="10" 
-                    HorizontalOptions="StartAndExpand">
+        <ContentPage Title="Menu" BackgroundColor="#f0eeef">
+
+            <StackLayout Orientation="Vertical">
+
+                <!-- 
+             This StackLayout you can use for other
+             data that you want to have in your menu drawer
+        -->
+                <StackLayout Padding="10" 
+                    HorizontalOptions="Center">
                     <controls:CircleImage 
-                        x:Name="imgEscola"  
+                        x:Name="imgAluno"  
                         BorderColor="#9c9ea6" 
                         BorderThickness="1" 
+                        HorizontalOptions="Center"
                         Aspect="AspectFit">
                         <controls:CircleImage.WidthRequest>
                             <OnPlatform x:TypeArguments="x:Double">
-                                <On Platform="Android, iOS">55</On>
+                                <On Platform="Android, iOS">100</On>
                                 <On Platform="WinPhone">75</On>
                             </OnPlatform>
                         </controls:CircleImage.WidthRequest>
                         <controls:CircleImage.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
-                                <On Platform="Android, iOS">55</On>
+                                <On Platform="Android, iOS">100</On>
                                 <On Platform="WinPhone">75</On>
                             </OnPlatform>
                         </controls:CircleImage.HeightRequest>
                     </controls:CircleImage>
                     <Label 
-                        x:Name="txtEscola" 
+                        TextColor="Gray"
+                        Text="Nome do Aluno"
+                        x:Name="txtAluno" 
                         HorizontalOptions="Center" 
                         VerticalOptions="Center" 
                         FontSize="20">
@@ -46,25 +50,48 @@
                             </OnPlatform>
                         </Label.FontFamily>
                     </Label>
+                    <Label 
+                        TextColor="Gray"
+                        Text="Descrição da Turma"
+                        x:Name="txtTurma" 
+                        HorizontalOptions="Center" 
+                        VerticalOptions="Center" 
+                        FontSize="16">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="ERASLGHT.TTF" />
+                                <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular" />
+                            </OnPlatform>
+                        </Label.FontFamily>
+                    </Label>
                 </StackLayout>
-                <ListView
-                    x:Name="listView">
+
+                <ListView x:Name="listViewPaginas"
+                    SeparatorColor="#e8e6e7"
+                          
+                          RowHeight="50"
+                  ItemSelected="OnMenuItemSelected"
+>
+
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <local:ExtendedViewCell 
-                                SelectedBackgroundColor="#ffb6c5ef">
-                                <StackLayout 
-                                    Orientation="Horizontal" 
-                                    Padding="10">
-                                    <Image 
-                                        Source="{Binding typePic}" 
-                                        VerticalOptions="Center" 
-                                        WidthRequest="50" 
-                                        HeightRequest="50"/>
-                                    <Label 
-                                        Text="{Binding typeInfo}" 
-                                        FontSize="18" 
-                                        VerticalOptions="Center" >
+                            <local:ExtendedViewCell SelectedBackgroundColor="#d6afc3">
+
+                                <!-- Main design for our menu items -->
+                                <StackLayout VerticalOptions="FillAndExpand"
+                             Orientation="Horizontal"
+                             Padding="10,10,0,10"
+                             Spacing="20"
+                                                                       BackgroundColor="#f8f6f7">
+
+                                    <Image Source="{Binding Icon}"
+                         WidthRequest="45"
+                         HeightRequest="45"
+                         VerticalOptions="Center" />
+
+                                    <Label Text="{Binding Title}"
+                         FontSize="19"
+                         VerticalOptions="Center">
                                         <Label.FontFamily>
                                             <OnPlatform x:TypeArguments="x:String">
                                                 <On Platform="iOS" Value="ERASLGHT.TTF" />
@@ -78,10 +105,13 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </StackLayout>
+
         </ContentPage>
     </MasterDetailPage.Master>
-    <MasterDetailPage.Detail  >
-        <local:PageTabs 
-            Icon="mensagens.png"/>
+
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+
+        </NavigationPage>
     </MasterDetailPage.Detail>
 </MasterDetailPage>

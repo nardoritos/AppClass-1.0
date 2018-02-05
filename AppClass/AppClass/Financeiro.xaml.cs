@@ -85,5 +85,9 @@ namespace AppClass
                 DisplayAlert("Código copiado!", "O código de barras do pagamento: " + modelo.DescrPendencia + " foi copiado para a Área de Transferência!", "OK");
             }
         }
+        public void Tapped()
+        {
+            MessagingCenter.Send((App)Application.Current, "Open");
+        }
     }
 }

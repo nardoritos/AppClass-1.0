@@ -71,8 +71,15 @@ namespace AppClass
             if (e.SelectedItem == null)
                 return;
             var model = e.SelectedItem as MessageModel;
+            listView.SelectedItem = null;
             await Navigation.PushAsync(new MensagemDetail(model));
             listView.SelectedItem = null;
+        }
+        
+        public void Tapped()
+        {
+
+            MessagingCenter.Send((App)Application.Current, "Open");
         }
     }
 }

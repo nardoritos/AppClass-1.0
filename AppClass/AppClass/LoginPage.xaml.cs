@@ -1,5 +1,7 @@
-﻿using AppClass.Helpers;
+﻿using AppClass.Controls;
+using AppClass.Helpers;
 using AppClass.Models;
+using AppClass.ViewModels;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -21,7 +23,6 @@ namespace AppClass
         string login;
         public LoginPage ()
 		{
-            
             if (Settings.CodUnidade != "" && Settings.RM != "" && Settings.Telefone != "")
             {
                 login = "s";
@@ -29,13 +30,15 @@ namespace AppClass
             InitializeComponent ();
 
             loginImage.Source = ImageSource.FromResource("AppClass.Imagens.background4.jpeg");
+
+            BindingContext = new MainViewModel();
         }
 
         public async void Login()
         {
             if (login == "s")
             {
-                Application.Current.MainPage = new NavigationPage(new ContatosEscola());
+
             }
             else
             {
@@ -77,56 +80,34 @@ namespace AppClass
                 }
                 else if(_login.Count > 1)
                 {
+                    // criar código para mais de 1 aluno no mesmo telefone
                     await DisplayAlert("Erro", "erro", "erro");
                 }
             }
         }
 
-        void FormataCelular(object sender, EventArgs e)
+        protected override void OnAppearing()
         {
-            var ev = e as TextChangedEventArgs;
+            base.OnAppearing();
 
-            if (ev.NewTextValue != ev.OldTextValue)
+            MessagingCenter.Subscribe<MainViewModel, TransitionType>(this, AppSettings.TransitionMessage, (sender, arg) =>
             {
-                var entry = (Entry)sender;
-                string text = Regex.Replace(ev.NewTextValue, @"[^0-9]", "");
+                var transitionType = (TransitionType)arg;
+                var transitionNavigationPage = Parent as Controls.TransitionNavigationPage;
 
-                text = text.PadRight(11);
-
-                // removendo todos os digitos excedentes 
-                if (text.Length > 11)
+                if (transitionNavigationPage != null)
                 {
-                    text = text.Remove(11);
+                    transitionNavigationPage.TransitionType = transitionType;
+                    Navigation.PushAsync(new NavigationPage(new ContatosEscola()));
                 }
-
-                text = text.Insert(0, "(").Insert(3, ")").Insert(9, "-").TrimEnd(new char[] { ' ', '.', '-' });
-                if (entry.Text != text)
-                    entry.Text = text;
-            }
-        }
-        void FormataData(object sender, EventArgs e)
-        {
-            var ev = e as TextChangedEventArgs;
-
-            if (ev.NewTextValue != ev.OldTextValue)
-            {
-                var entry = (Entry)sender;
-                string text = Regex.Replace(ev.NewTextValue, @"[^0-9]", "");
-
-                text = text.PadRight(11);
-
-                // removendo todos os digitos excedentes 
-                if (text.Length > 10)
-                {
-                    text = text.Remove(10);
-                }
-
-                text = text.Insert(2, "/").Insert(5, "/").TrimEnd(new char[] { ' ', '.', '-' });
-                if (entry.Text != text)
-                    entry.Text = text;
-            }
+            });
         }
 
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
 
+            MessagingCenter.Unsubscribe<MainViewModel, TransitionType>(this, AppSettings.TransitionMessage);
+        }
     }
 }

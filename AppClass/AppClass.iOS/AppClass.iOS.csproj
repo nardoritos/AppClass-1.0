@@ -92,6 +92,7 @@
     <Compile Include="ExtendedViewCellRenderer.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="TransitionNavigationPageRenderer.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -159,5 +160,41 @@
       <Project>{32386CB9-4D47-4EE4-9322-DDDE5C8C21E2}</Project>
       <Name>AppClass</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\BarraTit4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\BarraTit5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cod1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\financeiro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\financeirotab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mensagens.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mensagenstab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\notas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\notastab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\provisorio.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\telefonetab.png" />
   </ItemGroup>
 </Project>

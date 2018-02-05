@@ -1,7 +1,6 @@
 C:\Users\porti\source\repos\AppClass\AppClass\AppClass\bin\Debug\netstandard2.0\AppClass.deps.json
 C:\Users\porti\source\repos\AppClass\AppClass\AppClass\bin\Debug\netstandard2.0\AppClass.dll
 C:\Users\porti\source\repos\AppClass\AppClass\AppClass\bin\Debug\netstandard2.0\AppClass.pdb
-C:\Users\porti\source\repos\AppClass\AppClass\AppClass\obj\Debug\netstandard2.0\AppClass.csprojResolveAssemblyReference.cache
 C:\Users\porti\source\repos\AppClass\AppClass\AppClass\obj\Debug\netstandard2.0\AppClass.csproj.CoreCompileInputs.cache
 C:\Users\porti\source\repos\AppClass\AppClass\AppClass\obj\Debug\netstandard2.0\AppClass.App.xaml.g.cs
 C:\Users\porti\source\repos\AppClass\AppClass\AppClass\obj\Debug\netstandard2.0\AppClass.ContatosEscola.xaml.g.cs
@@ -15,3 +14,4 @@ C:\Users\porti\source\repos\AppClass\AppClass\AppClass\obj\Debug\netstandard2.0\
 C:\Users\porti\source\repos\AppClass\AppClass\AppClass\obj\Debug\netstandard2.0\AppClass.AssemblyInfo.cs
 C:\Users\porti\source\repos\AppClass\AppClass\AppClass\obj\Debug\netstandard2.0\AppClass.dll
 C:\Users\porti\source\repos\AppClass\AppClass\AppClass\obj\Debug\netstandard2.0\AppClass.pdb
+C:\Users\porti\source\repos\AppClass\AppClass\AppClass\obj\Debug\netstandard2.0\AppClass.csprojResolveAssemblyReference.cache

@@ -14,14 +14,8 @@
             <RowDefinition Height="56"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <StackLayout 
-            Padding="10" 
-            BackgroundColor="Red" 
-            Orientation="Horizontal" 
-            Grid.Row="0" 
-            Grid.Column="0" 
-            HorizontalOptions="Fill" 
-            VerticalOptions="Fill"/>
+
+        <Image Source="BarraTit4.png" Grid.Row="0" Grid.Column="0" Aspect="AspectFill" HorizontalOptions="Fill" VerticalOptions="Fill"/>
         <Image 
             x:Name="img"
             WidthRequest="80"
@@ -29,9 +23,14 @@
             Aspect="AspectFit"
             VerticalOptions="Center"
             Grid.Row="0" 
-            Grid.Column="0"
-            AbsoluteLayout.LayoutBounds="0.5,30,1,50"
-            AbsoluteLayout.LayoutFlags="WidthProportional"/>
+            Grid.Column="0"/>
+        <StackLayout Padding="10" Orientation="Horizontal">
+            <Image Source="hambaga.png"  Grid.Column="0" Grid.Row="0" HorizontalOptions="Start" WidthRequest="30" HeightRequest="30" Aspect="AspectFit">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Tapped" NumberOfTapsRequired="1"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </StackLayout>
         <AbsoluteLayout Grid.Row="1" Grid.Column="0">
             <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
                 <SearchBar  Placeholder="Procurar..." 
