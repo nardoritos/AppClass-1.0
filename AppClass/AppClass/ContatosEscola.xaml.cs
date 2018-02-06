@@ -64,6 +64,7 @@ namespace AppClass
             var menuList = new List<MenuItemModel>() {
                 new MenuItemModel() { Title = "Mensagens", Icon="mensagens.png", TargetType = typeof(Mensagens)},
                 new MenuItemModel() { Title = "Financeiro", Icon="financeiro.png", TargetType = typeof(Financeiro)},
+                new MenuItemModel() { Title = "Lições de Casa", Icon="homework.png", TargetType = typeof(Homework)}
             };
 
             listViewPaginas.ItemsSource = menuList;

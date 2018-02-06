@@ -20,13 +20,8 @@ namespace AppClass
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class LoginPage : ContentPage
 	{
-        string login;
         public LoginPage ()
 		{
-            if (Settings.CodUnidade != "" && Settings.RM != "" && Settings.Telefone != "")
-            {
-                login = "s";
-            }
             InitializeComponent ();
 
             loginImage.Source = ImageSource.FromResource("AppClass.Imagens.background4.jpeg");
@@ -36,18 +31,11 @@ namespace AppClass
 
         public async void Login()
         {
-            if (login == "s")
-            {
-
-            }
-            else
-            {
-                await frame1.FadeTo(0, 250);
-                frame1.IsEnabled = false;
-                frame1.IsVisible = false;
-                await frame2.FadeTo(1, 250);
-                frame2.IsEnabled = true;
-            }
+            await frame1.FadeTo(0, 250);
+            frame1.IsEnabled = false;
+            frame1.IsVisible = false;
+            await frame2.FadeTo(1, 250);
+            frame2.IsEnabled = true;
                 
         }
         public async void Carregar()
@@ -84,30 +72,6 @@ namespace AppClass
                     await DisplayAlert("Erro", "erro", "erro");
                 }
             }
-        }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-
-            MessagingCenter.Subscribe<MainViewModel, TransitionType>(this, AppSettings.TransitionMessage, (sender, arg) =>
-            {
-                var transitionType = (TransitionType)arg;
-                var transitionNavigationPage = Parent as Controls.TransitionNavigationPage;
-
-                if (transitionNavigationPage != null)
-                {
-                    transitionNavigationPage.TransitionType = transitionType;
-                    Navigation.PushAsync(new NavigationPage(new ContatosEscola()));
-                }
-            });
-        }
-
-        protected override void OnDisappearing()
-        {
-            base.OnDisappearing();
-
-            MessagingCenter.Unsubscribe<MainViewModel, TransitionType>(this, AppSettings.TransitionMessage);
         }
     }
 }

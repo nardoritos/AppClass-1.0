@@ -1,10 +1,6 @@
-﻿using System;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
 using Android.Views;
-using Android.Widget;
 using Android.OS;
 using Naxam.Controls.Platform.Droid;
 using Android.Graphics;
@@ -12,7 +8,7 @@ using static Android.App.ActivityManager;
 
 namespace AppClass.Droid
 {
-    [Activity(Label = "AppClass", Icon = "@drawable/cod1", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "AppClass", Icon = "@drawable/ClassPadIcon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle bundle)
@@ -42,10 +38,11 @@ namespace AppClass.Droid
             BottomTabbedRenderer.FontSize = 18;
             BottomTabbedRenderer.ItemTextColor = stateList;
             BottomTabbedRenderer.ItemIconTintList = stateList;
-            BottomTabbedRenderer.ItemAlign = Naxam.Controls.Platform.Droid.ItemAlignFlags.Center;
+            BottomTabbedRenderer.ItemAlign = ItemAlignFlags.Center;
             BottomTabbedRenderer.Typeface = Typeface.CreateFromAsset(this.Assets, "ErasRegular.ttf");
             Window.SetStatusBarColor(Color.Black);
             ImageCircle.Forms.Plugin.Droid.ImageCircleRenderer.Init();
+            ButtonCircle.FormsPlugin.Droid.ButtonCircleRenderer.Init();
 
             Bitmap bm = BitmapFactory.DecodeResource(Resources, Resource.Drawable.icon);
             TaskDescription taskDesc = new TaskDescription("AppClass", bm, Resources.GetColor(Resource.Color.black));

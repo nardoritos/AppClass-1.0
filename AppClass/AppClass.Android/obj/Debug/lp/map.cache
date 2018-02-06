@@ -1,5 +1,7 @@
 AppClass
 BadgeView.Shared
+ButtonCircle.FormsPlugin.Abstractions
+ButtonCircle.FormsPlugin.Android
 FAB.Droid
 FAB.Forms
 FormsViewGroup

@@ -26,7 +26,7 @@ namespace AppClass.iOS
             LoadApplication(new App());
 
             ImageCircle.Forms.Plugin.iOS.ImageCircleRenderer.Init();
-
+            ButtonCircle.FormsPlugin.iOS.ButtonCircleRenderer.Init();
             return base.FinishedLaunching(app, options);
         }
     }

@@ -76,3 +76,5 @@ C:\Users\porti\source\repos\AppClass\AppClass\AppClass.iOS\obj\iPhone\Debug\AppC
 C:\Users\porti\source\repos\AppClass\AppClass\AppClass.iOS\obj\iPhone\Debug\AppClass.iOS.csproj.CoreCompileInputs.cache
 C:\Users\porti\source\repos\AppClass\AppClass\AppClass.iOS\obj\iPhone\Debug\AppClass.iOS.exe
 C:\Users\porti\source\repos\AppClass\AppClass\AppClass.iOS\obj\iPhone\Debug\AppClass.iOS.pdb
+C:\Users\porti\source\repos\AppClass\AppClass\AppClass.iOS\bin\iPhone\Debug\ButtonCircle.FormsPlugin.Abstractions.dll
+C:\Users\porti\source\repos\AppClass\AppClass\AppClass.iOS\bin\iPhone\Debug\ButtonCircle.FormsPlugin.iOS.dll

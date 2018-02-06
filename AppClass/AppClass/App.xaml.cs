@@ -1,4 +1,5 @@
 ﻿using AppClass.Controls;
+using AppClass.Helpers;
 using Xamarin.Forms;
 
 namespace AppClass
@@ -9,7 +10,16 @@ namespace AppClass
 		{
 			InitializeComponent();
 
-            MainPage = new LoginPage();
+            if (Settings.CodUnidade != "" && Settings.RM != "" && Settings.Telefone != "")
+            {
+                MainPage = new ContatosEscola();
+            }
+            else
+            {
+                MainPage = new LoginPage();
+            }
+
+
 		}
 
 		protected override void OnStart ()

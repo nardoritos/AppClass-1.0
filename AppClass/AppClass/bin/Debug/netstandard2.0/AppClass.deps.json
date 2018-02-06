@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "7e1e9448654de237bc76a8784ce57b2b2e03c226"
+    "signature": "cd9ab875e5f5406aa2603d9fd87fdccb8f98ac50"
   },
   "compilationOptions": {},
   "targets": {
@@ -15,6 +15,7 @@
           "Naxam.BottomTabbedPage": "0.1.0.1",
           "Newtonsoft.Json": "10.0.3",
           "PCLStorage": "1.0.2",
+          "Plugins.Forms.ButtonCircle": "1.3.9",
           "SkiaSharp": "1.59.3",
           "SkiaSharp.Views.Forms": "1.59.3",
           "Xam.Plugins.Forms.ImageCircle": "2.0.1",
@@ -110,6 +111,14 @@
         "runtime": {
           "lib/net45/PCLStorage.Abstractions.dll": {},
           "lib/net45/PCLStorage.dll": {}
+        }
+      },
+      "Plugins.Forms.ButtonCircle/1.3.9": {
+        "dependencies": {
+          "Xamarin.Forms": "2.5.0.122203"
+        },
+        "runtime": {
+          "lib/portable-net45+wp80+win8+wpa81/ButtonCircle.FormsPlugin.Abstractions.dll": {}
         }
       },
       "SkiaSharp/1.59.3": {
@@ -665,6 +674,13 @@
       "sha512": "sha512-9If+1ZFCk3QaT/asfiL+J9FMnx2CTMrLCU8tDMUOI/aCGWGWl9vJ1/KcMkjf92op23ZknenvYJZBLDAqE3sFlg==",
       "path": "pclstorage/1.0.2",
       "hashPath": "pclstorage.1.0.2.nupkg.sha512"
+    },
+    "Plugins.Forms.ButtonCircle/1.3.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-L1FH2lmC++w0mVGrQ5JEob5u7xmxTVKbAIfQhM/wVuoD3cjyRyigtqSyrILFGsUN51knLdCHL3AYjB2A48+zbg==",
+      "path": "plugins.forms.buttoncircle/1.3.9",
+      "hashPath": "plugins.forms.buttoncircle.1.3.9.nupkg.sha512"
     },
     "SkiaSharp/1.59.3": {
       "type": "package",

@@ -109,6 +109,8 @@ class MonoPackageManager_Resources {
 		"AppClass.Android.dll",
 		"AppClass.dll",
 		"BadgeView.Shared.dll",
+		"ButtonCircle.FormsPlugin.Abstractions.dll",
+		"ButtonCircle.FormsPlugin.Android.dll",
 		"FAB.Droid.dll",
 		"FAB.Forms.dll",
 		"FormsViewGroup.dll",
