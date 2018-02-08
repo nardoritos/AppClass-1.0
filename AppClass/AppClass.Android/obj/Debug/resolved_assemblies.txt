@@ -20,6 +20,8 @@ C:\Users\porti\source\repos\AppClass\AppClass\AppClass.Android\obj\Debug\android
 C:\Users\porti\source\repos\AppClass\AppClass\AppClass.Android\obj\Debug\android\assets\PCLStorage.dll
 C:\Users\porti\source\repos\AppClass\AppClass\AppClass.Android\obj\Debug\android\assets\Plugin.Settings.Abstractions.dll
 C:\Users\porti\source\repos\AppClass\AppClass\AppClass.Android\obj\Debug\android\assets\Plugin.Settings.dll
+C:\Users\porti\source\repos\AppClass\AppClass\AppClass.Android\obj\Debug\android\assets\Prism.dll
+C:\Users\porti\source\repos\AppClass\AppClass\AppClass.Android\obj\Debug\android\assets\Prism.Forms.dll
 C:\Users\porti\source\repos\AppClass\AppClass\AppClass.Android\obj\Debug\android\assets\SkiaSharp.dll
 C:\Users\porti\source\repos\AppClass\AppClass\AppClass.Android\obj\Debug\android\assets\SkiaSharp.Views.Android.dll
 C:\Users\porti\source\repos\AppClass\AppClass\AppClass.Android\obj\Debug\android\assets\SkiaSharp.Views.Forms.dll

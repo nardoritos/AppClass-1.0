@@ -56,6 +56,7 @@ namespace AppClass
             imgAluno.Source = aluno.ElementAt(0).FotoConvertida;
             txtAluno.Text = aluno.ElementAt(0).NOME;
             txtTurma.Text = aluno.ElementAt(0).DescrTurma;
+            Settings.IDTurma = aluno.ElementAt(0).idTurma;
 
             #endregion
 

@@ -1,21 +1,157 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage 
+            NavigationPage.HasNavigationBar="False"
+            xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:circleimg="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
-             x:Class="AppClass.Homework">
-    <StackLayout HorizontalOptions="Center" VerticalOptions="Start">
-        <ScrollView Orientation="Horizontal">
-            <StackLayout Orientation="Horizontal">
-                <circleimg:CircleImage Source="homework.png" WidthRequest="100" HeightRequest="100" BorderColor="Black" BorderThickness="2" Aspect="AspectFit"/>
-                <circleimg:CircleImage Source="homework.png" WidthRequest="100" HeightRequest="100" BorderColor="Black" BorderThickness="2" Aspect="AspectFit"/>
-                <circleimg:CircleImage Source="homework.png" WidthRequest="100" HeightRequest="100" BorderColor="Black" BorderThickness="2" Aspect="AspectFit"/>
-                <circleimg:CircleImage Source="homework.png" WidthRequest="100" HeightRequest="100" BorderColor="Black" BorderThickness="2" Aspect="AspectFit"/>
-                <circleimg:CircleImage Source="homework.png" WidthRequest="100" HeightRequest="100" BorderColor="Black" BorderThickness="2" Aspect="AspectFit"/>
-                <circleimg:CircleImage Source="homework.png" WidthRequest="100" HeightRequest="100" BorderColor="Black" BorderThickness="2" Aspect="AspectFit"/>
-                <circleimg:CircleImage Source="homework.png" WidthRequest="100" HeightRequest="100" BorderColor="Black" BorderThickness="2" Aspect="AspectFit"/>
-                <circleimg:CircleImage Source="homework.png" WidthRequest="100" HeightRequest="100" BorderColor="Black" BorderThickness="2" Aspect="AspectFit"/>
-                
-            </StackLayout>
+             x:Class="AppClass.Homework"
+            xmlns:local="clr-namespace:AppClass">
+    <Grid 
+        VerticalOptions="FillAndExpand" 
+        HorizontalOptions="FillAndExpand" 
+        ColumnSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="56"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <Image Source="BarraTit4.png" Grid.Row="0" Grid.Column="0" Aspect="AspectFill" HorizontalOptions="Fill" VerticalOptions="Fill"/>
+        <Image 
+            x:Name="img"
+            WidthRequest="80"
+            HeightRequest="60"
+            Aspect="AspectFit"
+            VerticalOptions="Center"
+            Grid.Row="0" 
+            Grid.Column="0"/>
+        <StackLayout Padding="10" Orientation="Horizontal">
+            <Image Source="hambaga.png"  Grid.Column="0" Grid.Row="0" HorizontalOptions="Start" WidthRequest="30" HeightRequest="30" Aspect="AspectFit">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Tapped" NumberOfTapsRequired="1"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </StackLayout>
+        <ScrollView Grid.Row="1" Grid.Column="0" HorizontalOptions="Fill">
+
+            <RelativeLayout Grid.Row="1" 
+							HeightRequest="100"
+							VerticalOptions="Start">
+                <ListView  x:Name="listView" Rotation="270" RowHeight="100" ItemSelected="Selected" 
+                              RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-50}"
+                              RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=50}"
+                              RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=100}"
+                              RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <local:ExtendedViewCell SelectedBackgroundColor="#ffb6c5ef">
+                                <ContentView  Rotation="90" >
+                                    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                                        <Label Text="{Binding DiaDaSemana}"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="Center">
+                                            <Label.FontFamily>
+                                                <OnPlatform x:TypeArguments="x:String">
+                                                    <On Platform="iOS" Value="ERASLGHT.TTF" />
+                                                    <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular" />
+                                                </OnPlatform>
+                                            </Label.FontFamily>
+                                        </Label>
+                                        <Label Text="{Binding DiaDoMes}"
+                                                   VerticalOptions="Center"
+                                                   HorizontalOptions="Center">
+                                            <Label.FontFamily>
+                                                <OnPlatform x:TypeArguments="x:String">
+                                                    <On Platform="iOS" Value="ERASLGHT.TTF" />
+                                                    <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular" />
+                                                </OnPlatform>
+                                            </Label.FontFamily>
+                                        </Label>
+                                    </StackLayout>
+                                </ContentView>
+                            </local:ExtendedViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </RelativeLayout>
         </ScrollView>
-    </StackLayout>
+        <AbsoluteLayout Grid.Row="2" Grid.Column="0">
+            <Label Text="Não há nenhuma lição para esse dia!" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="20" TextColor="Gray" x:Name="label"
+                   AbsoluteLayout.LayoutBounds="0.5,0.1,0.8,100" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional">
+                <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="ERASLGHT.TTF" />
+                        <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular" />
+                    </OnPlatform>
+                </Label.FontFamily>
+            </Label>
+            <StackLayout HorizontalOptions="Fill" HeightRequest="1" BackgroundColor="LightBlue"/>
+            <ActivityIndicator IsRunning="{Binding Source={x:Reference listView2},Path=IsRefreshing}" Color="Black" 
+                               AbsoluteLayout.LayoutBounds="0.5,0.5,100,100" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <ListView x:Name="listView2" HasUnevenRows="True" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <local:ExtendedViewCell SelectedBackgroundColor="#ffb6c5ef">
+                            <StackLayout Padding="5" Orientation="Horizontal">
+
+                                <BoxView x:Name ="boxView" Color="{Binding color}" WidthRequest="5" VerticalOptions="Fill"/>
+
+                                <StackLayout Padding="5,0,0,0" >
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="2*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+
+
+                                        <Label Text="Conteúdo: " FontSize="16" TextColor="Black" Grid.Row="0" Grid.Column="0">
+                                            <Label.FontFamily>
+                                                <OnPlatform x:TypeArguments="x:String">
+                                                    <On Platform="iOS" Value="ERASLGHT.TTF" />
+                                                    <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular" />
+                                                </OnPlatform>
+                                            </Label.FontFamily>
+                                        </Label>
+                                        <Label Text="{Binding conteudo}" 
+                                       FontSize="16" TextColor="{Binding color}"  Grid.Row="0" Grid.Column="1">
+                                            <Label.FontFamily>
+                                                <OnPlatform x:TypeArguments="x:String">
+                                                    <On Platform="iOS" Value="ERASLGHT.TTF" />
+                                                    <On Platform="Android" Value="Lato-Italic.ttf#Lato-Italic" />
+                                                </OnPlatform>
+                                            </Label.FontFamily>
+                                        </Label>
+
+                                        <Label Text="Disciplina: "  TextColor="Black"
+                                       FontSize="16" Grid.Row="1" Grid.Column="0">
+                                            <Label.FontFamily>
+                                                <OnPlatform x:TypeArguments="x:String">
+                                                    <On Platform="iOS" Value="ERASLGHT.TTF" />
+                                                    <On Platform="Android" Value="Lato-Regular.ttf#Lato-Regular" />
+                                                </OnPlatform>
+                                            </Label.FontFamily>
+                                        </Label>
+                                        <Label Text="{Binding Disciplina}" 
+                                       FontSize="16" TextColor="{Binding color}" Grid.Row="1" Grid.Column="1">
+                                            <Label.FontFamily>
+                                                <OnPlatform x:TypeArguments="x:String">
+                                                    <On Platform="iOS" Value="ERASLGHT.TTF" />
+                                                    <On Platform="Android" Value="Lato-Italic.ttf#Lato-Italic" />
+                                                </OnPlatform>
+                                            </Label.FontFamily>
+                                        </Label>
+                                    </Grid>
+                                </StackLayout>
+                            </StackLayout>
+                        </local:ExtendedViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </AbsoluteLayout>
+    </Grid>
 </ContentPage>

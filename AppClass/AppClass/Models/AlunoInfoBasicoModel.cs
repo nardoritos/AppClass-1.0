@@ -17,5 +17,6 @@ namespace AppClass.Models
             }
         }
         public string DescrTurma { get; set; }
+        public string idTurma { get; set; }
     }
 }

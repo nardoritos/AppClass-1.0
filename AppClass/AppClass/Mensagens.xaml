@@ -97,7 +97,7 @@
                         </local:ExtendedViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>       
+            </ListView>
 
         </StackLayout>
     </Grid>

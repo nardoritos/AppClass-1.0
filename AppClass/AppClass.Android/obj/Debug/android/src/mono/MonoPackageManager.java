@@ -124,6 +124,8 @@ class MonoPackageManager_Resources {
 		"PCLStorage.dll",
 		"Plugin.Settings.Abstractions.dll",
 		"Plugin.Settings.dll",
+		"Prism.dll",
+		"Prism.Forms.dll",
 		"SkiaSharp.dll",
 		"SkiaSharp.Views.Android.dll",
 		"SkiaSharp.Views.Forms.dll",

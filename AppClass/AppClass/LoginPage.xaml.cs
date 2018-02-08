@@ -1,23 +1,15 @@
-﻿using AppClass.Controls;
-using AppClass.Helpers;
+﻿using AppClass.Helpers;
 using AppClass.Models;
-using AppClass.ViewModels;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace AppClass
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class LoginPage : ContentPage
 	{
         public LoginPage ()
@@ -25,13 +17,11 @@ namespace AppClass
             InitializeComponent ();
 
             loginImage.Source = ImageSource.FromResource("AppClass.Imagens.background4.jpeg");
-
-            BindingContext = new MainViewModel();
         }
 
         public async void Login()
         {
-            await frame1.FadeTo(0, 250);
+            await frame1.FadeTo(0, 250);    
             frame1.IsEnabled = false;
             frame1.IsVisible = false;
             await frame2.FadeTo(1, 250);

@@ -41,5 +41,11 @@ namespace AppClass.Helpers
 
             set => AppSettings.AddOrUpdateValue(nameof(CodUnidade), value);
         }
+        public static string IDTurma
+        {
+            get => AppSettings.GetValueOrDefault(nameof(IDTurma), string.Empty);
+
+            set => AppSettings.AddOrUpdateValue(nameof(IDTurma), value);
+        }
     }
 }

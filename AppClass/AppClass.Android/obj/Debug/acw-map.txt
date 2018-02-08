@@ -14,10 +14,10 @@ FAB.Droid.FloatingActionButtonRenderer, FAB.Droid;md5445507f430e9bd6ef1be2cef5d0
 FAB.Droid.FloatingActionButtonRenderer, FAB.Droid, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null;md5445507f430e9bd6ef1be2cef5d05ff68.FloatingActionButtonRenderer
 FAB.Droid.FloatingActionButtonRenderer;md5445507f430e9bd6ef1be2cef5d05ff68.FloatingActionButtonRenderer
 fab.droid.FloatingActionButtonRenderer;md5445507f430e9bd6ef1be2cef5d05ff68.FloatingActionButtonRenderer
-ImageCircle.Forms.Plugin.Droid.ImageCircleRenderer, ImageCircle.Forms.Plugin.Android;md502d7e59f99e9102fa2e96096f27df83d.ImageCircleRenderer
-ImageCircle.Forms.Plugin.Droid.ImageCircleRenderer, ImageCircle.Forms.Plugin.Android, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null;md502d7e59f99e9102fa2e96096f27df83d.ImageCircleRenderer
-ImageCircle.Forms.Plugin.Droid.ImageCircleRenderer;md502d7e59f99e9102fa2e96096f27df83d.ImageCircleRenderer
-imagecircle.forms.plugin.droid.ImageCircleRenderer;md502d7e59f99e9102fa2e96096f27df83d.ImageCircleRenderer
+ImageCircle.Forms.Plugin.Droid.ImageCircleRenderer, ImageCircle.Forms.Plugin.Android;md5979977b59766b06d26cb3e819c6ba31c.ImageCircleRenderer
+ImageCircle.Forms.Plugin.Droid.ImageCircleRenderer, ImageCircle.Forms.Plugin.Android, Version=2.0.2.0, Culture=neutral, PublicKeyToken=null;md5979977b59766b06d26cb3e819c6ba31c.ImageCircleRenderer
+ImageCircle.Forms.Plugin.Droid.ImageCircleRenderer;md5979977b59766b06d26cb3e819c6ba31c.ImageCircleRenderer
+imagecircle.forms.plugin.droid.ImageCircleRenderer;md5979977b59766b06d26cb3e819c6ba31c.ImageCircleRenderer
 Naxam.Controls.Platform.Droid.BottomTabbedRenderer, Naxam.BottomTabbedPage.Platform.Droid;md5cd5dc40d632806e6eca0bb1edbd7fac5.BottomTabbedRenderer
 Naxam.Controls.Platform.Droid.BottomTabbedRenderer, Naxam.BottomTabbedPage.Platform.Droid, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null;md5cd5dc40d632806e6eca0bb1edbd7fac5.BottomTabbedRenderer
 Naxam.Controls.Platform.Droid.BottomTabbedRenderer;md5cd5dc40d632806e6eca0bb1edbd7fac5.BottomTabbedRenderer
